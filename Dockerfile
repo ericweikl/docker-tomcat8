@@ -10,7 +10,7 @@ ADD http://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache
 RUN mkdir ${CATALINA_HOME} \
     && tar zxf /tmp/apache-tomcat.tar.gz --strip=1 -C ${CATALINA_HOME} \
     && rm /tmp/apache-tomcat.tar.gz \
-    && rm -rf ${CATALINA_HOME}/webapps/{examples,docs}
+    && rm -rf ${CATALINA_HOME}/webapps/examples ${CATALINA_HOME}/webapps/docs
 
 ADD tomcat-users.xml ${CATALINA_HOME}/conf/
 ADD deploy-and-run.sh ${CATALINA_HOME}/bin/
