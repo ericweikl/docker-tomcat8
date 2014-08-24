@@ -5,7 +5,7 @@ DIR=${DEPLOY_DIR:-/deploy}
 if [ -d $DIR ]; then
   for WAR in $DIR/*.war; do
      echo "Deploying $WAR..."
-     ln -s $i /opt/tomcat/webapps/$(basename $WAR)
+     ln -s $WAR /opt/tomcat/webapps/$(basename $WAR)
   done
 else
   echo "No deploy dir found at ${DIR} - did you forget to map a volume?"
