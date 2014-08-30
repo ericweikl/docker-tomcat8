@@ -7,7 +7,7 @@ if [ -d $DIR ]; then
      # remove version numbers, e.g. MyApp-1.0.0-SNAPSHOT.war becomes MyApp.war
      FINAL="/opt/tomcat/webapps/$(basename $WAR | sed 's#-[0-9]\+\.[0-9]\+\.[0-9]\+.*\.war#.war#')"
      echo "Deploying $WAR as $FINAL..."
-     ln -s $WAR /opt/tomcat/webapps/$FINAL
+     ln -s $WAR $FINAL
   done
 else
   echo "No deploy dir found at ${DIR} - did you forget to map a volume?"
