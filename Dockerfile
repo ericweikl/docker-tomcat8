@@ -1,4 +1,4 @@
-FROM hanswesterbeek/google-debian-oracle-jdk:7
+FROM hanswesterbeek/google-debian-oracle-jdk:8
 
 MAINTAINER Eric Weikl <eric.weikl@gmx.net>
 
