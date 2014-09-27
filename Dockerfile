@@ -5,7 +5,7 @@ MAINTAINER Eric Weikl <eric.weikl@gmx.net>
 ENV TOMCAT_VERSION 8.0.9
 ENV CATALINA_HOME /opt/tomcat
 
-ADD http://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz /tmp/apache-tomcat.tar.gz
+RUN wget -q -O /tmp/apache-tomcat.tar.gz http://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz
 
 RUN mkdir ${CATALINA_HOME} \
     && tar zxf /tmp/apache-tomcat.tar.gz --strip=1 -C ${CATALINA_HOME} \
