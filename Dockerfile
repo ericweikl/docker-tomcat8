@@ -16,9 +16,7 @@ RUN mkdir -p $(dirname ${CATALINA_HOME}) \
 ADD tomcat-users.xml ${CATALINA_HOME}/conf/
 ADD deploy-and-run.sh ${CATALINA_HOME}/bin/
 
-RUN addgroup -g 433 tomcat \
-    && adduser -D -u 431 -H -h ${CATALINA_HOME} -s /bin/nologin tomcat \
-    && adduser tomcat tomcat \
+RUN adduser -D -u 431 -H -h ${CATALINA_HOME} -s /bin/nologin tomcat \
     && chown -R tomcat:tomcat ${CATALINA_HOME} \
     && chmod 755 ${CATALINA_HOME}/bin/deploy-and-run.sh
 
