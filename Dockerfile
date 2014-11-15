@@ -1,4 +1,4 @@
-FROM jeanblanchard/busybox-java:jdk8
+FROM jeanblanchard/busybox-java:jdk7
 
 MAINTAINER Eric Weikl <eric.weikl@gmx.net>
 
